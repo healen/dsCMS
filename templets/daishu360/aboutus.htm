@@ -1,0 +1,129 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}-{dede:field.title/}-{dede:field.seotitle /}</title>
+<meta name="keywords"    content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+
+<link href="{dede:global.cfg_templets_skin/}/css/base.css" type="text/css" rel="stylesheet">
+<link href="{dede:global.cfg_templets_skin/}/css/content.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="{dede:global.cfg_templets_skin/}/images/damotouicon.ico" type="image/x-icon" />
+
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-1.7.1.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-ui-1.8.18.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.slides.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/jq_scroll.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/myjs.js"></script>
+<script type="text/javascript">
+function dispDiv(id){
+	for(var i=1;i<=2;i++){
+		if(id==i){
+			document.getElementById("div_disp_"+i).style.display="block";
+			document.getElementById("a_menu_"+i).setAttribute("class","active");
+		}else{
+			document.getElementById("div_disp_"+i).style.display="none";
+			document.getElementById("a_menu_"+i).removeAttribute("class");
+		}
+	}
+}
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?82226dc39a411aee1d76171b6fbd0173";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</head>
+<body>
+<div class="wrapper">
+<!--top-->
+{dede:include filename="head.htm"/}
+
+<!--top结束-->
+<div class="banner1"></div>
+<!--页面内容-->
+<!--页面内容头部-->
+<div class="index_grayBox">
+    <div class="w1000 ma0 index_grayCon">
+
+        <!-- <div class="index_announce">
+        <a href="news?typeid=2" class="index_announce_til">最新公告</a>
+            <div class="index_announce_inc">
+                <div class="announce_info">
+                    <ul>
+                    					<li><span class="datetime">2015-07-08 </span><a href="detail?id=592">朱明春受邀出席中国风险投资学术年会</a></li>
+					<li><span class="datetime">2015-07-07 </span><a href="detail?id=587">第二轮P2P网贷洗牌已经开始 哪些会...</a></li>
+					<li><span class="datetime">2015-02-24 </span><a href="detail?id=558">网贷系统建设之见解（九）--网贷系统...</a></li>
+					<li><span class="datetime">2015-02-16 </span><a href="detail?id=557">网贷系统建设之见解（八）--各省市针...</a></li>
+                    </ul>
+                </div>
+                <div class="announce_btn">
+                    <a href="javascript:;" id="announce_btn_up" class="icos btn_up"></a>
+                    <a href="javascript:;" id="announce_btn_down" class="icos btn_down"></a>
+                </div>
+            </div>
+            <div class="icos index_announce_end"></div>
+        </div> -->
+        <div class="index_contact">
+            <a href="#"><em class="icos ico_phone"></em>
+                <div class="contact_text">
+                <p class="con_text"><span>咨询热线：</span><em>010-53677696</em></p>
+                <p class="con_arrow"><em class="icos ico_con_arrow"></em></p>
+                </div>
+            </a>
+            <a href="server@daishu360.com"><em class="icos ico_msg"></em>
+                <div class="contact_text">
+                <p class="con_text"><span>邮箱地址：</span><em>server@daishu360.com</em></p>
+                <p class="con_arrow"><em class="icos ico_con_arrow"></em></p>
+                </div>
+            </a>
+        </div>
+        <div class="index_develop_process"></div>
+        <div class="icos gray_arrow"></div>
+    </div>
+</div><!--页面内容头部结束--> 
+<!--内容-->
+<div class="w1000 ma0 pb40 fn-clear">
+
+    <div class="main_til"><span class="main_til_con"><em class="f_30">关于</em>我们<span class="english_til">About Us</span></span><div class="main_til_site">当前位置：<a href="index.html">首页</a><em> &gt; </em>关于我们</div><div class="main_til_bg"></div></div>
+<ul class="side_menu">
+<li><a href="javascript:void(0)" tabindex="1" onclick="dispDiv(1)" id="a_menu_1" class="active">关于我们</a></li>
+<li><a href="javascript:void(0)" tabindex="2" onclick="dispDiv(2)" id="a_menu_2">联系我们</a></li>
+
+</ul>
+
+<div id="div_disp_1" class="singlepege">
+<h2>关于我们</h2>
+    <div class="sj jj">
+        {dede:field.content/}
+    </div>
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<div id="div_disp_2" style="display:none" class="singlepege">
+
+		<h2>联系我们</h2>
+<div class="sj jj">
+
+        <p>公司名称：{dede:global.company_name/}</p>
+        <p>公司地址：{dede:global.address/}</p>
+        <p>公司电话：{dede:global.tel/}</p>
+  
+</div>
+</div>
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+<div id="div_disp_3" style="display:none" class="singlepege">
+	
+</div>
+
+</div>
+</div>
+{dede:include filename="foot.htm"/}
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255722814'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1255722814%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script></body>
+</html>

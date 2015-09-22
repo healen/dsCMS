@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+<title>{dede:global.cfg_webname/}-{dede:field.title/}-{dede:field.seotitle /}</title>
+<meta name="keywords"    content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+
+<link href="{dede:global.cfg_templets_skin/}/css/base.css" type="text/css" rel="stylesheet">
+<link href="{dede:global.cfg_templets_skin/}/css/content.css" type="text/css" rel="stylesheet">
+<link href="{dede:global.cfg_templets_skin/}/css/newsmod.css" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="{dede:global.cfg_templets_skin/}/images/damotouicon.ico" type="image/x-icon" />
+
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-1.7.1.min.js"></script>
+
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-ui-1.8.18.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.slides.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/jq_scroll.js"></script>
+
+<script src="{dede:global.cfg_templets_skin/}/js/myjs.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?82226dc39a411aee1d76171b6fbd0173";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+<body>
+<div class="wrapper">
+<!--top-->
+{dede:include filename="head.htm"/}
+
+
+<div class="banner1"></div>
+
+
+
+<div class="w1000 ma0">
+    <div class="fn-clear">
+        <div class="main_til">
+            <span class="main_til_con">
+                <em class="f_30">新闻</em>动态<span class="english_til">News</span>
+            </span>
+            <div class="main_til_site">
+                当前位置：{dede:field name='position'/} 列表</div><div class="main_til_bg">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="newsmodlist">
+    <div class="containce">
+        <ul class="list">
+
+            {dede:list typeid="20" pagesize='3'}
+            <li>
+                <div class="listcontent">
+                    <div class="warplist">
+                        <div class="top">
+                             <h2>[field:title/]</h2>
+                             <p>
+                                <span>[field:pubdate function="MyDate('Y年m月d日 h:s发表',@me)" /]</span>
+                            </p>
+                        </div>
+                        <div class="content">
+                            <img src="[field:litpic/]" alt="[field:title/]" title="[field:title/]" width="410" height="250" alt="" class="pice" />
+                            <div class="article">
+                                <div class="con">   
+                                 [field:description function='(strlen("@me")>500?cn_substr("@me",500)."…" : "@me" )'/]
+                                </div>
+                                <div class="link">
+                                    <a href="[field:arcurl/]" target="_blank">阅读更多</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                       
+                    </div>
+                    
+                </div>
+            </li>
+            {/dede:list}
+
+       
+
+
+ 
+
+
+        </ul>
+
+         <div class="dspages">
+                 {dede:pagelist listitem="info,pre,next,pageno" listsize="1"/}
+          </div>
+    </div>
+</div>
+<!--页面内容头部结束--> 
+<!--页面内容-->
+
+{dede:include filename="foot.htm"/}
+
+<script type="text/javascript">
+    $(".pice").each(function(){
+        var src=$(this).attr("src");
+        if(src==""){
+            $(this).hide();
+             $(this).parents(".warplist").find(".top").css({
+                "text-align":"left"
+            })
+        }
+       
+    })
+
+    $(".containce .list li:odd").addClass("n2")
+</script>
+</div>
+</body>
+</HTML>
